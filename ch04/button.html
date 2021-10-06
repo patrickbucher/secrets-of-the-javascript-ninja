@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Click the Button</title>
+    </head>
+    <body>
+        <button id="test">Click Me!</button>
+        <script>
+            function Button() {
+                this.clicked = false;
+                this.click = function() {
+                    this.clicked = true;
+                    // XXX button != this
+                    console.log(`Was the button clicked? ${button.clicked}`);
+                    console.log(`Was the this object clicked? ${this.clicked}`);
+                };
+            }
+            var button = new Button();
+            var elem = document.getElementById("test");
+            elem.addEventListener("click", button.click);
+        </script>
+    </body>
+</html>
